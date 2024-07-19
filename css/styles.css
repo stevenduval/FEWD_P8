@@ -17,62 +17,144 @@ h1 {
     flex-direction: column;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 60px;
     box-sizing: border-box;
+    padding: 0 20px 20px;
 }
 
 header {
-    margin: 42px 0 18px;
+    margin: 42px 0 32px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 header input {
-    height: 20px;
+    height: 40px;
     padding: 10px;
     min-width: 100px;
-    width: 35%;
+    width: 100%;
     border: 2px solid #dfdfdf;
     border-radius: 5px;
     font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
 }
 
-main { 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(412px, 1fr));
-    gap: 32px 36px;
-}
-
-.card {
+main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    position: relative;
+}
+
+.employees { 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px 0px;
+}
+
+.employees .card {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 25px;
     border: 0.15rem solid #DFDFDF;
     background: #FFFFFF;
     border-radius: 8px;
-    gap: 22px;
+    text-align: center;
 }
 
 .card .picture img {
     border-radius: 50%;
 }
 
-.card .info h2, 
-.card .info p {
+.card h2, 
+.card p {
     line-height: 1.15;
     padding: 0;
     margin: 0.75rem 0;
 }
 
-.card .info h2 {
+.card .info-section1 h2 {
     font-size: 20px;
     color: #404A51;
 }
 
-.card .info p {
+.card  p {
    font-size: 15px;
    color: #848A8E;
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .container {
+    max-width: 455px;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.15rem solid #DFDFDF;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.modal .card .picture {
+    margin-top: 15px;
+}
+
+.modal .card .info-section1 {
+    padding-bottom: 26px;
+}
+
+.modal .card .info-section2 {
+    padding: 26px 0;
+    border-top: 0.1rem solid #d5d5d5;
+}
+
+.modal .close {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 0 60px 60px;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    header input {
+        width: 35%;
+        margin-left: 20px;
+    }
+
+    .employees { 
+        grid-template-columns: repeat(auto-fit, minmax(412px, 1fr));
+        gap: 32px 36px;
+    }
+
+    .employees .card {
+        flex-direction: row;
+        align-items: center;
+        gap: 22px;
+        text-align: left;
+    }
 }
