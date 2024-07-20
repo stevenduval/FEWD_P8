@@ -132,6 +132,11 @@ main {
     background: gray;
     padding: 5px 12px;
     cursor: pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .prev:hover, .next:hover {
