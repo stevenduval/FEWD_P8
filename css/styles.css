@@ -56,11 +56,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
+    padding: 25px 20px;
     border: 0.15rem solid #DFDFDF;
     background: #FFFFFF;
     border-radius: 8px;
     text-align: center;
+    cursor: pointer;
+    text-overflow: ellipsis;
 }
 
 .card .picture img {
@@ -80,7 +82,7 @@ main {
 }
 
 .card  p {
-   font-size: 15px;
+   font-size: 14px;
    color: #848A8E;
 }
 
@@ -104,6 +106,11 @@ main {
     justify-content: center;
 }
 
+.modal .card {
+    display: flex;
+    flex-direction: column;
+}
+
 .modal .container {
     max-width: 455px;
     width: 100%;
@@ -112,10 +119,35 @@ main {
     border-radius: 8px;
     text-align: center;
     padding: 0 40px;
+    position: relative
+}
+
+.prev, .next {
+    font-size: 20px;
+    position: absolute;
+    top: 45%;
+    font-weight: 900;
+    color: white;
+    border-radius: 50%;
+    background: gray;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.prev:hover, .next:hover {
+    color: black;
+}
+
+.prev {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
 }
 
 .modal .card .picture {
-    margin-top: 15px;
+    margin-top: 45px;
 }
 
 .modal .card .info-section1 {
@@ -128,10 +160,11 @@ main {
 }
 
 .modal .close {
-    display: flex;
-    justify-content: flex-end;
     font-weight: 700;
     font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
 }
 
 
@@ -152,7 +185,7 @@ main {
     }
 
     .employees { 
-        grid-template-columns: repeat(auto-fit, minmax(412px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(412px, 1fr));
         gap: 32px 36px;
     }
 
